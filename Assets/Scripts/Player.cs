@@ -5,6 +5,7 @@ public class Player : Character
 {
     [SerializeField] private float jumpForce;
     [SerializeField] private float jumpsAvailable;
+    [SerializeField] private GameObject sprite;
     public int maxJumps = 1;
 
     private float curMoveInput;
@@ -42,6 +43,15 @@ public class Player : Character
     void Move()
     {
         rig.linearVelocity = new Vector2(curMoveInput * moveSpeed, rig.linearVelocity.y);
+
+        if (curMoveInput < 0)
+        {
+            sprite.transform.localRotation = Quaternion.Euler(0, -180, 0);
+        }
+        else if (curMoveInput > 0)
+        {
+            sprite.transform.localRotation = Quaternion.Euler(0, -0, 0);
+        }
     }
 
     void Jump()
@@ -52,9 +62,14 @@ public class Player : Character
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.contacts[0].point.y < transform.position.y)
+        foreach (var contact in collision.contacts)
         {
-            jumpsAvailable = maxJumps;
+            if (contact.point.y < transform.position.y)
+            {
+                jumpsAvailable = maxJumps;
+            }
         }
+
+      
     }
 }
