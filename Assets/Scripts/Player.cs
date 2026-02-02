@@ -1,18 +1,39 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : Character
 {
+    [Header("Stats")]
     [SerializeField] private float jumpForce;
     [SerializeField] private float jumpsAvailable;
+    [SerializeField] private int maxJumps = 1;
+
+    [Header("Components")]
     [SerializeField] private GameObject sprite;
-    public int maxJumps = 1;
+    [SerializeField] private LayerMask enemyLayer;
+    [SerializeField] private Animator anim;
+    [SerializeField] GameObject cam;
 
     private float curMoveInput;
 
+    [Header("UI")]
+    [SerializeField] private TextMeshProUGUI hpTextVertical;
+    [SerializeField] private TextMeshProUGUI hpTextHorizontal;
+
+    private void Start()
+    {
+        hpTextVertical.text = $"{curHP}/{maxHP}";
+        hpTextHorizontal.text = hpTextVertical.text;
+    }
     private void FixedUpdate()
     {
         Move();
+
+        if (transform.position.y < -10)
+            Die();
     }
 
     public void OnMoveInput(InputAction.CallbackContext context)
@@ -24,7 +45,19 @@ public class Player : Character
     {
         if (context.phase == InputActionPhase.Performed)
         {
-            // attack
+            anim.SetTrigger("Attack");
+            TryAttack();
+        }
+    }
+
+    void TryAttack()
+    {
+        Vector2 direction = sprite.transform.right; 
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 1.2f, enemyLayer);
+
+        if (hit.collider != null)
+        {
+            hit.collider.GetComponent<Character>()?.OnTakeDamage(attackDamage);
         }
     }
 
@@ -69,7 +102,21 @@ public class Player : Character
                 jumpsAvailable = maxJumps;
             }
         }
+    }
 
-      
+
+
+    public override void Die()
+    {
+        cam.transform.parent = null;
+        sprite.SetActive(false);
+        SceneManager.LoadScene(SceneManager.GetSceneByBuildIndex(1).buildIndex);
+    }
+
+    public override void OnTakeDamage(int damage)
+    {
+        base.OnTakeDamage(damage);
+        hpTextVertical.text = $"HP {curHP} / {maxHP}";
+        hpTextHorizontal.text = hpTextVertical.text;
     }
 }

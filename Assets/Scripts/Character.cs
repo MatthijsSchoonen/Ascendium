@@ -17,7 +17,10 @@ public abstract class Character : MonoBehaviour
         curHP -= damage;
 
         if (curHP < 0)
+        {
             Die();
+            curHP = 0;
+        }    
     }
 
     public virtual void OnHeal(int hp)
@@ -30,6 +33,6 @@ public abstract class Character : MonoBehaviour
 
     public virtual void Die()
     {
-        Debug.Log("Died");
+        Destroy(gameObject);
     }
 }
