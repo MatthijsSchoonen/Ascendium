@@ -23,6 +23,17 @@ public class Player : Character
     [SerializeField] private TextMeshProUGUI hpTextVertical;
     [SerializeField] private TextMeshProUGUI hpTextHorizontal;
 
+    public static Player instance;
+
+    private void Awake()
+    {
+        if (instance != this && instance != null)
+            Destroy(gameObject);
+        else
+            instance = this;
+    }
+
+
     private void Start()
     {
         hpTextVertical.text = $"{curHP}/{maxHP}";
@@ -116,6 +127,13 @@ public class Player : Character
     public override void OnTakeDamage(int damage)
     {
         base.OnTakeDamage(damage);
+        hpTextVertical.text = $"HP {curHP} / {maxHP}";
+        hpTextHorizontal.text = hpTextVertical.text;
+    }
+
+    public override void OnHeal(int hp)
+    {
+        base.OnHeal(hp);
         hpTextVertical.text = $"HP {curHP} / {maxHP}";
         hpTextHorizontal.text = hpTextVertical.text;
     }
