@@ -1,9 +1,16 @@
 using TMPro;
 using UnityEngine;
 
+public enum Difficulty
+{
+    easy,
+    medium,
+    hard,
+}
+
 public class GameManager : MonoBehaviour
 {
-    private int score;
+    private int score = 0;
     private int highScore;
     public Difficulty curDifficulty;
 
@@ -16,11 +23,33 @@ public class GameManager : MonoBehaviour
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI VerticalScore;
     [SerializeField] private TextMeshProUGUI HorizontalScore;
-    public enum Difficulty
+
+    public static GameManager Instance;
+    
+
+    void Start()
     {
-        easy,
-        medium,
-        hard,
+        curDifficulty = Difficulty.easy;
+        score = 0;
+        VerticalScore.text = score.ToString();
+        HorizontalScore.text = score.ToString();
+
+        for (int i = 0; i < 5; i++)
+        {
+            LevelSpawner.Instance.SpawnLevel(curDifficulty);
+        }
+    }
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
     }
 
     void OnEnable()
@@ -31,6 +60,7 @@ public class GameManager : MonoBehaviour
             return;
         }
         highScore = 0;
+
     }
 
     public void IncreaseScore()
@@ -43,6 +73,11 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.Save();
         }
         UpdateDifficulty();
+
+        VerticalScore.text = score.ToString();
+        HorizontalScore.text = score.ToString();
+
+        LevelSpawner.Instance.SpawnLevel(curDifficulty);
     }
     private void UpdateDifficulty()
     {
