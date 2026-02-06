@@ -2,10 +2,6 @@ using UnityEngine;
 using System.Collections;
 public class MeleeEnemy : Enemy
 {
-    [Header("Combat")]
-    [SerializeField] private float attackCooldown;
-    private bool onAttackCooldown;
-
     protected override bool CanChasePlayer()
     {
         return !onAttackCooldown;
@@ -20,10 +16,5 @@ public class MeleeEnemy : Enemy
         StartCoroutine(AttackCooldownRoutine());
     }
 
-    private IEnumerator AttackCooldownRoutine()
-    {
-        onAttackCooldown = true;
-        yield return new WaitForSeconds(attackCooldown);
-        onAttackCooldown = false;
-    }
+
 }

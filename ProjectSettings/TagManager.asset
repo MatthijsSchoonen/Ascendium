@@ -13,10 +13,10 @@ TagManager:
   - 
   - Water
   - UI
-  - Enemy
-  - 
-  - 
-  - 
+  - Enemy_Collider
+  - Enemy_Trigger
+  - Player
+  - Wall
   - 
   - 
   - 

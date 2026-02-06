@@ -1,34 +1,19 @@
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class Hazerd : MonoBehaviour
 {
     [SerializeField] private int damage;
-
-
-    private void Start()
-    {
-        Destroy(gameObject, 5f);
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Wall"))
-        {
-            Destroy(gameObject);
-        }
-
         if (collision.CompareTag("Player"))
-        {
             Player.instance.OnTakeDamage(damage);
-            Destroy(gameObject);
-        }
     }
-
-
 
     public void SetDamage(int damageOverride)
     {
+
         if (damageOverride > 0)
             damage = damageOverride;
     }
+
 }

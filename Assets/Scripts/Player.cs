@@ -11,11 +11,15 @@ public class Player : Character
     [SerializeField] private float jumpsAvailable;
     [SerializeField] private int maxJumps = 1;
 
+    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private float rayLength = 0.1f;
+
     [Header("Components")]
     [SerializeField] private GameObject sprite;
     [SerializeField] private LayerMask enemyLayer;
     [SerializeField] private Animator anim;
     [SerializeField] GameObject cam;
+    [SerializeField] private BoxCollider2D box;
 
     private float curMoveInput;
 
@@ -104,19 +108,6 @@ public class Player : Character
         rig.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        foreach (var contact in collision.contacts)
-        {
-            if (contact.point.y < transform.position.y)
-            {
-                jumpsAvailable = maxJumps;
-            }
-        }
-    }
-
-
-
     public override void Die()
     {
         cam.transform.parent = null;
@@ -129,6 +120,9 @@ public class Player : Character
         base.OnTakeDamage(damage);
         hpTextVertical.text = $"HP {curHP} / {maxHP}";
         hpTextHorizontal.text = hpTextVertical.text;
+
+        if(curHP <= 0)
+            Die();
     }
 
     public override void OnHeal(int hp)
@@ -137,4 +131,25 @@ public class Player : Character
         hpTextVertical.text = $"HP {curHP} / {maxHP}";
         hpTextHorizontal.text = hpTextVertical.text;
     }
+
+
+    private void Update()
+    {
+        if (IsGrounded())
+        {
+            jumpsAvailable = maxJumps;
+        }
+    }
+
+    private bool IsGrounded()
+    {
+        Vector2 origin = new Vector2(
+            box.bounds.center.x,
+            box.bounds.min.y
+        );
+
+        Debug.DrawRay(origin, Vector2.down * rayLength, Color.magenta);
+        return Physics2D.Raycast(origin, Vector2.down, rayLength, groundLayer);
+    }
+
 }

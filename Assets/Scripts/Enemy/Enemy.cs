@@ -1,4 +1,4 @@
-using System.Linq;
+using System.Collections;
 using UnityEngine;
 
 public abstract class Enemy : Character
@@ -8,6 +8,10 @@ public abstract class Enemy : Character
     [SerializeField] protected float chaseDistance; // 0 = infinite
     [SerializeField] protected Transform sprite;
     [SerializeField] protected GameObject[] dropItems;
+
+    [Header("Combat")]
+    [SerializeField] protected float attackCooldown;
+    protected bool onAttackCooldown;
 
     protected Vector3 startPos;
     protected Vector3 targetPos;
@@ -19,7 +23,9 @@ public abstract class Enemy : Character
     protected enum State
     {
         Idle,
-        Chase
+        Chase,
+        Attack
+
     }
 
     protected State curState;
@@ -46,6 +52,11 @@ public abstract class Enemy : Character
             case State.Chase:
                 Chase();
                 break;
+
+            case State.Attack:
+                Attack();
+                break;
+
         }
 
         HandleFlip();
@@ -74,6 +85,11 @@ public abstract class Enemy : Character
             player.transform.position,
             moveSpeed * Time.deltaTime
         );
+    }
+
+    protected virtual void Attack()
+    {
+        // write logic in specific classses
     }
 
     protected virtual void UpdateState()
@@ -134,6 +150,13 @@ public abstract class Enemy : Character
         }
 
         base.Die();
+    }
+
+    protected virtual IEnumerator AttackCooldownRoutine()
+    {
+        onAttackCooldown = true;
+        yield return new WaitForSeconds(attackCooldown);
+        onAttackCooldown = false;
     }
 
 }
