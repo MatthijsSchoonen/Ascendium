@@ -2202,10 +2202,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelSpawner
   easyLevels:
   - {fileID: 1127386410169531564, guid: e014294764cac414893715f79f9fd511, type: 3}
+  - {fileID: 8630648799881970134, guid: 426e1214b2e97fc41a2509e43e08cfd6, type: 3}
+  - {fileID: 2411656571756504304, guid: d69bb6fa71dfb3b43aedd6bcce21a7e4, type: 3}
   mediumLevels:
   - {fileID: 1127386410169531564, guid: e014294764cac414893715f79f9fd511, type: 3}
+  - {fileID: 8630648799881970134, guid: 426e1214b2e97fc41a2509e43e08cfd6, type: 3}
+  - {fileID: 2411656571756504304, guid: d69bb6fa71dfb3b43aedd6bcce21a7e4, type: 3}
   hardLevels:
   - {fileID: 1127386410169531564, guid: e014294764cac414893715f79f9fd511, type: 3}
+  - {fileID: 8630648799881970134, guid: 426e1214b2e97fc41a2509e43e08cfd6, type: 3}
+  - {fileID: 2411656571756504304, guid: d69bb6fa71dfb3b43aedd6bcce21a7e4, type: 3}
 --- !u!1 &1790765895
 GameObject:
   m_ObjectHideFlags: 0

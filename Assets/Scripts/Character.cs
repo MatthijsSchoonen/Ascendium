@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public abstract class Character : MonoBehaviour
@@ -12,6 +13,8 @@ public abstract class Character : MonoBehaviour
     [SerializeField] protected SpriteRenderer sR;
     [SerializeField] protected Rigidbody2D rig;
 
+    Coroutine flashRoutine;
+
     public virtual void OnTakeDamage(int damage)
     {
         curHP -= damage;
@@ -20,7 +23,12 @@ public abstract class Character : MonoBehaviour
         {
             Die();
             curHP = 0;
-        }    
+        }
+
+        if (flashRoutine != null)
+            StopCoroutine(flashRoutine);
+
+        flashRoutine = StartCoroutine(DamageFlash());
     }
 
     public virtual void OnHeal(int hp)
@@ -35,4 +43,24 @@ public abstract class Character : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    public virtual IEnumerator DamageFlash(float duration = 0.15f)
+    {
+        Color originalColor = sR.color;
+        sR.color = Color.red;
+
+        float t = 0f;
+        while (t < duration)
+        {
+            t += Time.deltaTime;
+            sR.color = Color.Lerp(Color.red, originalColor, t / duration);
+            yield return null;
+        }
+
+        sR.color = originalColor;
+    }
+
+
+
+
 }
