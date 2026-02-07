@@ -10,8 +10,8 @@ public enum Difficulty
 
 public class GameManager : MonoBehaviour
 {
-    private int score = 0;
-    private int highScore;
+    public int score = 0;
+    public int highScore;
     public Difficulty curDifficulty;
 
     private const string SAVE_KEY = "HighScore";

@@ -112,7 +112,7 @@ public class Player : Character
     {
         cam.transform.parent = null;
         sprite.SetActive(false);
-        SceneManager.LoadScene(SceneManager.GetSceneByBuildIndex(1).buildIndex);
+        UIManager.Instance.EnableGameOverScreen();
     }
 
     public override void OnTakeDamage(int damage)
