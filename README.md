@@ -22,14 +22,14 @@ The game focuses on procedural generation, tight platforming, and scalable diffi
 ## 🕹 Controls
 
 ### Desktop (Browser)
-- **Move:** A / D or ← / →
-- **Jump:** Space
-- **Attack:** Left Mouse Button or Ctrl
+- **Move:** A / D  or  Left joystick
+- **Jump:** Space or x (controller)
+- **Attack:** Left Mouse Button or right trigger controller
 
 ### Mobile
 - On-screen buttons for movement, jump, and attack  
 - Designed for both portrait and landscape play
-
+- buttons can also be toggled on in browser
 ---
 
 ## 🛠 Tech & Platform
@@ -43,10 +43,8 @@ The game focuses on procedural generation, tight platforming, and scalable diffi
 
 ## 📌 Project Status
 
-- 🚧 Active development
-- 🧪 Current build is a **test deployment**
+- 🧪 Current build is a **final deployment** 
 - 🎯 Created as a **portfolio project**
-- ❌ No online features, leaderboards, or monetization
 
 ---
 

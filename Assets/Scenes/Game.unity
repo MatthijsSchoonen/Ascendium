@@ -2051,7 +2051,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &537635991
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2220,7 +2220,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 545235954}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1765325881}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: PauseGame
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &545235954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2340,7 +2352,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 551588702}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1765325881}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: PauseGame
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &551588702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2630,7 +2654,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 655453212}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1765325881}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: MainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &655453212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4471,7 +4507,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1211655318}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1765325881}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: PauseGame
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1211655318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4706,7 +4754,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1262523683}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1765325881}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: PauseGame
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1262523683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5372,7 +5432,7 @@ GameObject:
   - component: {fileID: 1449411521}
   - component: {fileID: 1449411520}
   m_Layer: 0
-  m_Name: VerticalPauseCanvas
+  m_Name: HorizontalPauseCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5646,7 +5706,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1474144596}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1765325881}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: PauseGame
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1474144596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6087,7 +6159,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1552023676}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1765325881}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: PauseGame
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1552023676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6710,7 +6794,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1715716167}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1765325881}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: MainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1715716167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6803,6 +6899,14 @@ MonoBehaviour:
   HorizontalGameOverScreen: {fileID: 2136151757}
   HorizontalHighScoreText: {fileID: 13937080}
   HorizontalScoreText: {fileID: 931398931}
+  VerticalPauseMenu: {fileID: 352980724}
+  VerticalPauseBtn: {fileID: 1211655315}
+  VerticalExitBtn: {fileID: 551588699}
+  HorizontalPauseMenu: {fileID: 1825175639}
+  HorizontalPauseBtn: {fileID: 545235951}
+  HorizontalExitBtn: {fileID: 1552023673}
+  VerticalInputUI: {fileID: 1937356692}
+  HorizontalInputUI: {fileID: 537635990}
 --- !u!114 &1765325882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6818,8 +6922,8 @@ MonoBehaviour:
   score: 0
   highScore: 0
   curDifficulty: 0
-  mediumTreshHold: 5
-  hardTreshHold: 10
+  mediumTreshHold: 10
+  hardTreshHold: 25
   VerticalScore: {fileID: 39963395}
   HorizontalScore: {fileID: 46573279}
 --- !u!114 &1765325883
@@ -7321,7 +7425,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1885830978}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1765325881}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: UpdateInputUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1885830978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8062,7 +8178,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2120970736}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1765325881}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: UpdateInputUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2120970736
 MonoBehaviour:
   m_ObjectHideFlags: 0
