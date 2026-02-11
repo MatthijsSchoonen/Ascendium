@@ -15,6 +15,8 @@ public abstract class Character : MonoBehaviour
 
     Coroutine flashRoutine;
 
+    private bool isFlashing = false;
+
     public virtual void OnTakeDamage(int damage)
     {
         curHP -= damage;
@@ -46,7 +48,13 @@ public abstract class Character : MonoBehaviour
 
     public virtual IEnumerator DamageFlash(float duration = 0.15f)
     {
-        Color originalColor = sR.color;
+        Color originalColor = Color.white;
+        if (!isFlashing)
+        {
+            originalColor = sR.color;
+        }
+        isFlashing = true;
+
         sR.color = Color.red;
 
         float t = 0f;
@@ -58,6 +66,7 @@ public abstract class Character : MonoBehaviour
         }
 
         sR.color = originalColor;
+        isFlashing = false;
     }
 
 
